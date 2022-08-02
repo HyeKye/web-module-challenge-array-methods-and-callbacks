@@ -98,14 +98,12 @@ Use the higher order function getAverageGoals to do the following:
  
 */
 
-function getAverageGoals(arr, finalsCB) {
+function getAverageGoals(arr) {
     const averageGoals = arr.reduce((total, goals) => {
-        let homeSum = total + goals['Home Team Goals'];
-        return homeSum;
-        let awaySum = total + goals['Away Team Goals'];
-        return awaySum;
+        return total + goals['Home Team Goals'] + goals['Away Team Goals']
     }, 0)
- }
+    return (averageGoals / arr.length).toFixed(2);
+ }; 
 
 
 
